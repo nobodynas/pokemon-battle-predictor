@@ -9,7 +9,7 @@ pokemon_df['id'] = pokemon_df['#']
 # load in the model
 pokemon_model = pickle.load(open("pokemon_model.pkl", "rb"))
 
-st.title("Pokémon Battle Predictor")
+st.title("Pokémon Battle Predictor (Linear Regression Ver.)")
 
 names = pokemon_df['Name'].tolist()
 

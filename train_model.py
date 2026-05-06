@@ -1,6 +1,6 @@
 import pandas as pd
 import pickle
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 from utils import simulateBattle, getDualTypeMultiplier
 
 # load in the dataset
@@ -40,8 +40,8 @@ battle_df = pd.DataFrame(data, columns=[
 X = battle_df.drop('winner', axis=1)
 y = battle_df['winner']
 
-# make a random forest classifier model based off the new battle dataset
-model = RandomForestClassifier()
+# make a logistic regression model based off the new battle dataset
+model = LogisticRegression(max_iter=1000)
 model.fit(X, y)
 
 # save the model
